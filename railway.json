@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "name": "api",
+      "source": { "rootDirectory": "." },
+      "build": { "builder": "nixpacks" },
+      "startCommand": "uvicorn api.main:app --host 0.0.0.0 --port $PORT"
+    },
+    {
+      "name": "frontend",
+      "source": { "rootDirectory": "frontend" },
+      "build": { "builder": "nixpacks" },
+      "startCommand": "sh /app/start.sh"
+    }
+  ]
+}
